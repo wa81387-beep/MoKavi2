@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Black sweetbants| MoKavi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="product-details">
+
+  
+
+  <!-- المعلومات -->
+  <div class="product-details">
+
+  <!-- الصور -->
+  <div class="pants-images">
+  <img src="polowhite.jpg">
+  <img src="poiowhite.jpg">
+</div>
+
+  <!-- التفاصيل -->
+  <div class="product-info">
+    <h2>POLO WHITE</h2>
+    <p class="price">LE 700</p>
+   
+
+    <p class="label">Size</p>
+    <div class="sizes">
+   <button class="size-btn ">S</button>
+  <button class="size-btn ">M</button>
+  <button class="size-btn">L</button>
+  <button class="size-btn ">XL</button>
+  <button class="size-btn">XXL</button>
+</div>
+    <div class="cart-row">
+      <div class="qty-box">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+      </div>
+
+      <button type="button" class="add-cart">Add to cart</button>
+    </div>
+
+    
+    <p class="desc">
+      Exclusively at MoKavi 
+    Avaliable in three essential colors:Black,Grey,Navy
+    Made from 100% premium cotton for lasting 
+    comfort and a soft,elegant feel.
+    MoKavi-Effortless Global Style.
+    </p>
+  </div>
+
+</div>
+<script>
+
+let qty = 1;
+let selectedSize = "";
+
+let sizes = document.querySelectorAll(".size-btn");
+
+sizes.forEach(btn=>{
+  btn.addEventListener("click", function(){
+
+    if(this.classList.contains("sold")){
+      return;
+    }
+
+    sizes.forEach(b=>b.classList.remove("active"));
+    this.classList.add("active");
+    selectedSize = this.innerText;
+
+  });
+});
+
+let qtyNumber = document.querySelector(".qty-box span");
+let plus = document.querySelector(".qty-box button:last-child");
+let minus = document.querySelector(".qty-box button:first-child");
+
+plus.onclick = function(){
+  qty++;
+  qtyNumber.innerText = qty;
+}
+
+minus.onclick = function(){
+  if(qty > 1){
+    qty--;
+    qtyNumber.innerText = qty;
+  }
+}
+
+document.querySelector(".add-cart").onclick = function(){
+
+  if(selectedSize === ""){
+    alert("اختاري المقاس الأول");
+    return;
+  }
+
+  let product = {
+    name: "POLO WHITE",
+    price: 700,
+    image: "polowhite.jpg",
+    size: selectedSize,
+    qty: qty
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push(product);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  window.location.href = "cart.html";
+
+}
+
+</script>
+</body>
+</html>
