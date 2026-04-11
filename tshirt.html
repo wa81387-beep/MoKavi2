@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  <title>MoKavi | Hoodies</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Sweet Pants | MoKavi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  
 </head>
 
 <body>
 
+<!-- ===== NAVBAR ===== -->
 <nav class="navbar">
   <div class="nav-left">
     <span class="menu-btn" onclick="toggleMenu()">☰</span>
   </div>
 
   <div class="nav-logo">MoKavi</div>
-
- <div class="nav-logo">MoKavi</div>
 
   <div class="nav-right">
     <a href="cart.html" class="cart-icon">
@@ -29,70 +28,72 @@
   </div>
 </nav>
 
+<!-- ===== SIDE MENU ===== -->
 <div class="side-menu" id="sideMenu">
-    <a href="index.html">SHOP</a>
+  <a href="index.html">SHOP</a>
   <a href="hoodie.html">HOODIES</a>
   <a href="zip-up.html">ZIP-UP</a>
-  <a href="sweet pants.html">SWEATPANTS</a>
+  <a href="sweetpants.html">SWEATPANTS</a>
   <a href="tshirt.html">T-SHIRT</a>
 </div>
 
+<!-- ===== TITLE ===== -->
 <div class="category-header">
-  <h1>T-SHIRT</h1>
+  <h1>SWEATPANTS</h1>
   <p>Essential streetwear made to stand out</p>
 </div>
-<section class="products">
- 
+
 <!-- ===== PRODUCTS ===== -->
-<section class="Shop">
-<div class="product">
-    <a href="polonavy.html">
-      <img src="polonavy.jpg" alt="">
+<section class="products">
+
+  <!-- Product 1 -->
+  <div class="product">
+    <a href="sweetpantsblack.html">
+      <div class="image-box">
+        <img src="blackpant.jpg" alt="Black Pant">
+      </div>
     </a>
-    <h3>POLO NAVY</h3>
+    <h3>BLACK PANT</h3>
     <p class="price">
-     
-      <span class="new-price">700 LE</span>
+   
+      <span class="new-price">600 LE</span>
     </p>
-    <a class="order" href="polonavy.html">ORDER</a>
+    <a class="order" href="sweetpantsblack.html">ORDER</a>
   </div>
 
-     <div class="product">
-    <a href="poloblack.html">
-      <img src="poloblack.jpg" alt="">
+  <!-- Product 2 -->
+  <div class="product">
+    <a href="brrown.html">
+      <div class="image-box">
+        <img src="pantbrrown.jpg" alt="Brrown Pant">
+      </div>
     </a>
-    <h3>POLO BLACK</h3>
+    <h3>BRROWN PANT</h3>
+    <p class="price">
+    
+      <span class="new-price">600 LE</span>
+    </p>
+    <a class="order" href="brrown.html">ORDER</a>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="product">
+    <a href="pantsgray.html">
+      <div class="image-box">
+        <img src="pantgray.jpg" alt="Grey Pant">
+      </div>
+    </a>
+    <h3>GREY PANT</h3>
     <p class="price">
      
-      <span class="new-price">700 LE</span>
+      <span class="new-price">600 LE</span>
     </p>
-    <a class="order" href="poloblack.html">ORDER</a>
+    <a class="order" href="pantsgray.html">ORDER</a>
   </div>
-<div class="product">
-    <a href="polowhite.html">
-      <img src="polowhite.jpg" alt="">
-    </a>
-    <h3>POLO WHITE</h3>
-    <p class="price">
-     
-      <span class="new-price">700 LE</span>
-    </p>
-    <a class="order" href="polowhite.html">ORDER</a>
-  </div>
-<div class="product">
-    <a href="polobrown.html">
-      <img src="polobrown.jpg" alt="">
-    </a>
-    <h3>POLO BROWN</h3>
-    <p class="price">
-     
-      <span class="new-price">700 LE</span>
-    </p>
-    <a class="order" href="polobrown.html">ORDER</a>
-  </div>
+
 </section>
-</section>
-  <script>
+
+<script>
 function toggleMenu() {
   document.getElementById("sideMenu").classList.toggle("active");
 }
@@ -100,4 +101,3 @@ function toggleMenu() {
 
 </body>
 </html>
-
