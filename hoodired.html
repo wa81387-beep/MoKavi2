@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Burgundy Hoodie | MoKavi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="product-details">
+
+  <!-- الصور -->
+  <div class="product-images">
+    <img src="hoodired.jpg">
+    
+  </div>
+
+  <!-- التفاصيل -->
+  <div class="product-info">
+    <h2>HOODIE BURGANDY</h2>
+    <p class="price">LE 500</p>
+    <p class="old-price">LE 600</p>
+
+    <p class="label">Size</p>
+    <div class="sizes">
+
+  <button class="size-btn sold">M</button>
+  <button class="size-btn">L</button>
+  <button class="size-btn sold">XL</button>
+    <button class="size-btn">XXL</button>
+</div>
+    <div class="cart-row">
+      <div class="qty-box">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+      </div>
+<button type="button" class="add-cart">Add to cart</button>
+    </div>
+
+    <p class="desc">
+    Hoodie
+      Exclusively on MoKavi Avaliable in 6 essential colors:black/grey
+    /burgundy 
+    made from 100% premium
+      cotton for warmth and everyday
+    comfort
+    </p>
+  </div>
+
+</section>
+<script>
+
+
+function goToOrder(){
+    if (selectedSize === "") {
+        alert("اختاري المقاس الأول");
+        return;
+    }
+
+    localStorage.setItem("selectedProduct", "BLAcK HOODIE");
+    localStorage.setItem("selectedSize", selectedSize);
+    localStorage.setItem("selectedQty", qty);
+
+    window.location.href = "contact.html";
+    function goToOrder(){
+    if (selectedSize === "") {
+        alert("اختاري المقاس الأول");
+        return;
+    }
+
+    localStorage.setItem("selectedProduct", "BLACK HOODIE");
+    localStorage.setItem("selectedSize", selectedSize);
+    localStorage.setItem("selectedQty", qty);
+
+    window.location.href = "contact.html";
+}
+}
+function selectSize(el) {
+  document.querySelectorAll(".size").forEach(s => s.classList.remove("active"));
+  el.classList.add("active");
+  selectedSize = el.innerText;
+}
+
+function changeQty(val) {
+  qty += val;
+  if (qty < 1) qty = 1;
+  document.getElementById("qty").innerText = qty;
+}
+
+function addToCart() {
+  if (selectedSize === "") {
+    alert("اختاري المقاس");
+    return;
+  }
+
+  let product = {
+    name: "hoodie black",
+    price: 500,
+    size: selectedSize,
+    qty: qty,
+    image: "hoodi black.jpg"
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  window.location.href = "cart.html";
+}
+let sizes = document.querySelectorAll(".size-btn");
+
+sizes.forEach(btn=>{
+  btn.addEventListener("click", function(){
+    sizes.forEach(b=>b.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+
+let qty = 1;
+let qtyNumber = document.querySelector(".qty-box span");
+let plus = document.querySelector(".qty-box button:last-child");
+let minus = document.querySelector(".qty-box button:first-child");
+
+plus.addEventListener("click", function(){
+  qty++;
+  qtyNumber.innerText = qty;
+});
+
+minus.addEventListener("click", function(){
+  if(qty > 1){
+    qty--;
+    qtyNumber.innerText = qty;
+  }
+});
+
+</script>
+<script>
+document.querySelector(".add-cart").addEventListener("click", function(){
+
+  let selectedSize = document.querySelector(".size-btn.active");
+
+  if(!selectedSize){
+    alert("اختاري المقاس الأول");
+    return;
+  }
+
+  let product = {
+    name: "Hoodie black",
+    price: 500,
+    image: "Hoodi black.jpg",
+    size: selectedSize.innerText,
+    qty: qty
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert("تم إضافة المنتج للكارت ✅");
+});
+
+</script>
+    
+<script>
+document.querySelector(".add-cart").addEventListener("click", function(){
+
+  let product = {
+    name: "hoodi organdy",
+    price: 500,
+    image: "hoodired.jpg",
+    qty: 1
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  window.location.href = "cart.html";
+});
+</script>
+</body>
+</html>

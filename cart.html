@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart | MoKavi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="cart-items"></div>
+
+  <div class="cart-summary">
+    <h3>Total: <span id="total-price">0</span> LE</h3>
+    <button onclick="goToCheckout()"> Checkout </button>
+  </div>
+
+  <script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const cartItems = document.getElementById("cart-items");
+const totalPriceEl = document.getElementById("total-price");
+
+function renderCart(){
+
+cartItems.innerHTML = "";
+let total = 0;
+
+cart.forEach((item,index)=>{
+
+total += item.price * item.qty;
+
+cartItems.innerHTML += `
+
+<div class="cart-item">
+
+<img src="${item.image}" width="80">
+
+<h3>${item.name}</h3>
+
+<p>${item.price} LE</p>
+
+<p>Size: ${item.size}</p>
+
+<div class="qty-box">
+
+<button onclick="changeQty(${index},-1)">-</button>
+
+<span>${item.qty}</span>
+
+<button onclick="changeQty(${index},1)">+</button>
+
+</div>
+
+<button onclick="removeItem(${index})">Remove</button>
+
+</div>
+
+`;
+
+});
+
+totalPriceEl.innerText = total;
+
+}
+
+function changeQty(index,value){
+
+cart[index].qty += value;
+
+if(cart[index].qty < 1){
+cart[index].qty = 1;
+}
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+renderCart();
+
+}
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+renderCart();
+
+}
+
+
+renderCart();
+function goToCheckout(){
+  window.location.href = "contact.html";
+}
+function goToCheckout(){
+
+if(cart.length === 0){
+alert("Cart is empty");
+return;
+}
+
+window.location.href = "contact.html";
+}
+</script>
+</body>
+</html>

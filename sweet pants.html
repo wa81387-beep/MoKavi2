@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> sweet pants</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-left">
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+  </div>
+
+  <div class="nav-logo">MoKavi</div>
+
+   <div class="nav-right">
+    <a href="cart.html" class="cart-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 6V5a5 5 0 0 1 10 0v1M4 8h16l-1.5 13h-13L4 8z"/>
+      </svg>
+      <span class="cart-count">0</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ===== SIDE MENU ===== -->
+<div class="side-menu" id="sideMenu">
+  <a href="index.html">SHOP</a>
+  <a href="hoodie.html">HOODIES</a>
+  <a href="zip-up.html">ZIP-UP</a>
+  <a href="sweet pants.html">SWEATPANTS</a>
+  <a href="tshirt.html">T-SHIRT</a>
+</div>
+
+<!-- ===== TITLE ===== -->
+<div class="category-header">
+  <h1>SWEATPANTS</h1>
+  <p>Essential streetwear made to stand out</p>
+</div>
+<!-- ===== PRODUCTS ===== -->
+<section class="shop">
+
+  <!-- Product 1 -->
+  <div class="product">
+    
+      <div class="image-box">
+        
+        <img src="blackpant.jpg">
+      </div>
+    </a>
+
+    <h3>BLACK SWEET PANT</h3>
+    <p class="price">
+      <span class="old-price">550 LE</span>
+      <span class="new-price">450 LE</span>
+    </p>
+
+    <a class="order" href="sweetpantsblack.html">ORDER</a>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product">
+    <a href="brrown.html"></a>
+      <div class="image-box">
+       
+        <img src="pantbrrown.jpg">
+      </div>
+    </a>
+
+    <h3>BRROWN  PANT</h3>
+    <p class="price">
+      <span class="old-price">550 LE</span>
+      <span class="new-price">450 LE</span>
+    </p>
+
+    <a class="order" href="brrown.html">ORDER</a>
+  </div>
+
+  <div class="product">
+    <a href="pantgray.html"></a>
+      <div class="image-box">
+        
+        <img src="pantgray.jpg">
+      </div>
+    </a>
+
+    <h3> GREY PANT</h3>
+    <p class="price">
+      <span class="old-price">550 LE</span>
+      <span class="new-price">450 LE</span>
+    </p>
+
+    <a class="order" href="pantsgray.html">ORDER</a>
+  </div>
+
+</section>
+
+<script>
+function toggleMenu() {
+  document.getElementById("sideMenu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

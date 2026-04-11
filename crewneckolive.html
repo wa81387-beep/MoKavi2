@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Black hoodi | MoKavi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<div class="product-details">
+
+  <!-- الصور -->
+  <div class="product-images">
+    <img src="crewneckolive.jpg">
+    
+  </div>
+
+  <!-- التفاصيل -->
+  <div class="product-info">
+    <h2>CREWNECK OLIVE</h2>
+    <p class="price">LE 550</p>
+    <p class="old-price">LE 700</p>
+
+    <p class="label">Size</p>
+    <div class="sizes">
+
+  <button class="size-btn ">M</button>
+  <button class="size-btn">L</button>
+  <button class="size-btn ">XL</button>
+  <button class="size-btn">XXL</button>
+</div>
+    <div class="cart-row">
+      <div class="qty-box">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+      </div>
+
+      <button type="button" class="add-cart">Add to cart</button>
+    </div>
+
+    <p class="desc">
+ <br> Mokavi crewneck.
+  <br> NO logo screaming.
+   <br>just presence.
+  <br> black/gray/brrown/olive/white/bargandy</li>
+  
+    </p>
+  </div>
+
+</section>
+<script>
+
+let qty = 1;
+let selectedSize = "";
+
+let sizes = document.querySelectorAll(".size-btn");
+
+sizes.forEach(btn=>{
+  btn.addEventListener("click", function(){
+
+    if(this.classList.contains("sold")){
+      return;
+    }
+
+    sizes.forEach(b=>b.classList.remove("active"));
+    this.classList.add("active");
+    selectedSize = this.innerText;
+
+  });
+});
+
+let qtyNumber = document.querySelector(".qty-box span");
+let plus = document.querySelector(".qty-box button:last-child");
+let minus = document.querySelector(".qty-box button:first-child");
+
+plus.onclick = function(){
+  qty++;
+  qtyNumber.innerText = qty;
+}
+
+minus.onclick = function(){
+  if(qty > 1){
+    qty--;
+    qtyNumber.innerText = qty;
+  }
+}
+
+document.querySelector(".add-cart").onclick = function(){
+
+  if(selectedSize === ""){
+    alert("اختاري المقاس الأول");
+    return;
+  }
+
+  let product = {
+    name: "CREWNECK OLIVE",
+    price: 550,
+    image: "crewneckolive.jpg",
+    size: selectedSize,
+    qty: qty
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push(product);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  window.location.href = "cart.html";
+
+}
+
+</script>
+</body>
+</html>
