@@ -1,13 +1,18 @@
+
 /* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
-body {
-  background: #ffffff;
-  color: #111;
+
+html, body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 /* ===== NAVBAR ===== */
 .navbar {
@@ -2251,12 +2256,8 @@ font-size:14px;
 .banner-img{
 height:35vh;
 }
+  
 
-.banner-text h1{
-font-size:22px;
-}
-
-}
 .banner-text h1{
 font-size:22px;
 }
