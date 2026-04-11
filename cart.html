@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Your Cart | MoKavi</title>
   <link rel="stylesheet" href="style.css">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -15,7 +16,10 @@
     <button onclick="goToCheckout()"> Checkout </button>
   </div>
 
-  <script>
+  
+
+
+<script>
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -53,7 +57,7 @@ cartItems.innerHTML += `
 
 </div>
 
-<button onclick="removeItem(${index})">Remove</button>
+<button onclick="removeItem(${index})">X</button>
 
 </div>
 
@@ -103,6 +107,6 @@ return;
 
 window.location.href = "contact.html";
 }
-</script>
+  </script>
 </body>
 </html>
